@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- reference Moment.js library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js" type="text/javascript"></script>
+</head>
+<body>
+
+<h2>Input Date</h2>
+    <input id="input" type="text" value="">
+    <button onclick="ganti()">ok</button>
+
+<h2>Seminggu lagi</h2>
+<div id="outputSeminggu"></div>
+
+<h2>40 Hari lagi</h2>
+<div id="outputEmpatPuluh"></div>
+
+<h2>100 Hari lagi</h2>
+<div id="tambahSeratus"></div>
+
+<h2>1 tahun lagi</h2>
+<div id="tambahSatuTahun"></div>
+
+<h2>2 tahun lagi</h2>
+<div id="tambahDuaTahun"></div>
+
+<h2>1000 hari lagi</h2>
+<div id="tambahSeribuHari"></div>
+
+<script type="text/javascript">
+function ganti() {
+
+(function()
+{
+    // get the input date from #input div element
+    var input = document.getElementById('input').value;
+  
+    // use moment() with input value and a string format pattern as arguments
+    var Date = moment(input, 'MMMM D, YYYY');
+    var tambahSeminggu = document.getElementById('outputSeminggu');
+    tambahSeminggu.innerHTML = Date.add(1, 'week').format('YYYY-M-D'); 
+
+    var Date = moment(input, 'MMMM D, YYYY');
+    var tambahEmpatPuluh = document.getElementById('outputEmpatPuluh');
+    tambahEmpatPuluh.innerHTML = Date.add(40, 'day').format('YYYY-M-D'); 
+
+    var Date = moment(input, 'MMMM D, YYYY');
+    var tambahSeratus = document.getElementById('tambahSeratus');
+    tambahSeratus.innerHTML = Date.add(100, 'day').format('YYYY-M-D');
+
+    var Date = moment(input, 'MMMM D, YYYY');
+    var tambahSatuTahun = document.getElementById('tambahSatuTahun');
+    tambahSatuTahun.innerHTML = Date.add(1, 'year').format('YYYY-M-D');
+
+    var Date = moment(input, 'MMMM D, YYYY');
+    var tambahDuaTahun = document.getElementById('tambahDuaTahun');
+    tambahDuaTahun.innerHTML = Date.add(2, 'year').format('YYYY-M-D');
+
+    var Date = moment(input, 'MMMM D, YYYY');
+    var tambahSeribuHari = document.getElementById('tambahSeribuHari');
+    tambahSeribuHari.innerHTML = Date.add(1000, 'day').format('YYYY-M-D');
+
+
+
+
+})();
+}
+
+</script>
+
+</body>
+</html>
